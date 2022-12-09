@@ -1,0 +1,1 @@
+# CS4642-Mini-Project---Building-Text-Corpus-and-Search-Application
