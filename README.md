@@ -1,7 +1,16 @@
 # Tamil Songs  Database
 
-This Repository includes the frontend,backend implementation for a search query.
-After configuring the elasticsearch, the sample search engine is used to try the query searches.
+Objectives of this proect
+*Build a text corpus of Tamil movie songs contains at least one metaphor per song 
+*Build a search engine using the corpus built which can be used to search wider range of queries about songs and metaphors used in it
+
+Initially I build a corpus consists of 100 Unique songs including the metaphors in it 
+
+The corpus file format was in csv. So As a first step we need to convert it into a json file which contains all 100 songs.
+
+Later we need to create the index and add the documents in it using elastic search.
+
+This search engine is capable of searching queries on tamil songs composed by AR Rahman and Yuvan from 2000 to 2022
 
 Demo
 ---
