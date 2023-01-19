@@ -1,0 +1,84 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="s006">
+
+
+		{% if hits %}
+		<hgroup class="mb20">
+			<h1>Search Results</h1>
+			<h2 class="lead" id="results"><strong class="text-danger">{{ num_results }}</strong> results were found for the search for <strong class="text-danger">{{  query  }}</strong></h2>
+			<h2 class="lead" id="results"> About <strong class="text-danger">({{  time  }}ms)</strong></h2>
+		</hgroup>
+
+		<section id='song_section' class="col-md-10">
+			{% for hit in hits %}
+			<article class="search-result row">
+				<div class="col-md-12">
+					<!-- <h3><b>{{ hit._source.இயக்குனர் }}</b></h3> -->
+					<ul class="meta-search">
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>பாடல் பெயர்:</b> {{ hit._source['பாடல் பெயர்']  }} </span></li>
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>பாடகர்:</b>  {{ hit._source.பாடகர்  }} </span></li>
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>இசையமைப்பாளர்:</b>  {{ hit._source.இசையமைப்பாளர்  }} </span></li>
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>பாடலாசிரியர்:</b>  {{ hit._source.பாடலாசிரியர்  }} </span></li>
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>திரைப்படம்:</b>  {{ hit._source.திரைப்படம்  }} </span></li>
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>வெளியிடப்பட்ட ஆண்டு:</b>  {{ hit._source['வெளியிடப்பட்ட ஆண்டு']  }} </span></li>
+
+						{% if 'உருவகம் 1' in hit._source %}
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>உருவகம் 1:</b> {{ hit._source['உருவகம் 1'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;மூல பொருள் 1:</b> {{ hit._source['மூல பொருள் 1'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;இலக்கு பொருள் 1:</b> {{ hit._source['இலக்கு பொருள் 1'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;விளக்கம் 1:</b> {{ hit._source['விளக்கம் 1'] }} </span></li>
+						{% endif %}
+						{% if 'உருவகம் 2' in hit._source %}
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>உருவகம் 2:</b> {{ hit._source['உருவகம் 2'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;மூல பொருள் 2:</b> {{ hit._source['மூல பொருள் 2'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;இலக்கு பொருள் 2:</b> {{ hit._source['இலக்கு பொருள் 2'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;விளக்கம் 2:</b> {{ hit._source['விளக்கம் 2'] }} </span></li>
+						{% endif %}
+						{% if 'உருவகம் 3' in hit._source %}
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>உருவகம் 3:</b> {{ hit._source['உருவகம் 3'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;மூல பொருள் 3:</b> {{ hit._source['மூல பொருள் 3'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;இலக்கு பொருள் 3:</b> {{ hit._source['இலக்கு பொருள் 3'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;விளக்கம் 3:</b> {{ hit._source['விளக்கம் 3'] }} </span></li>
+						{% endif %}
+						{% if 'உருவகம் 4' in hit._source %}
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>உருவகம் 4:</b> {{ hit._source['உருவகம் 4'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;மூல பொருள் 4:</b> {{ hit._source['மூல பொருள் 4'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;இலக்கு பொருள் 4:</b> {{ hit._source['இலக்கு பொருள் 4'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;விளக்கம் 4:</b> {{ hit._source['விளக்கம் 4'] }} </span></li>
+						{% endif %}
+						{% if 'உருவகம் 5' in hit._source %}
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>உருவகம் 5:</b> {{ hit._source['உருவகம் 5'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;மூல பொருள் 5:</b> {{ hit._source['மூல பொருள் 5'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;இலக்கு பொருள் 5:</b> {{ hit._source['இலக்கு பொருள் 5'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;விளக்கம் 5:</b> {{ hit._source['விளக்கம் 5'] }} </span></li>
+						{% endif %}
+						{% if 'உருவகம் 6' in hit._source %}
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>உருவகம் 6:</b> {{ hit._source['உருவகம் 6'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;மூல பொருள் 6:</b> {{ hit._source['மூல பொருள் 6'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;இலக்கு பொருள் 6:</b> {{ hit._source['இலக்கு பொருள் 6'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;விளக்கம் 6:</b> {{ hit._source['விளக்கம் 6'] }} </span></li>
+						{% endif %}
+						{% if 'உருவகம் 7' in hit._source %}
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>உருவகம் 7:</b> {{ hit._source['உருவகம் 7'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;மூல பொருள் 7:</b> {{ hit._source['மூல பொருள் 7'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;இலக்கு பொருள் 7:</b> {{ hit._source['இலக்கு பொருள் 7'] }} </span></li>
+						<li> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;விளக்கம் 7:</b> {{ hit._source['விளக்கம் 7'] }} </span></li>
+						{% endif %}
+
+						<li><i class="glyphicon glyphicon-tags"></i> <span><b>பாடல் வரிகள்:</b>  {{ hit._source['பாடல் வரிகள்']  }} </span></li>
+						
+					</ul>
+					<p style="white-space: pre-line">{{ hit._source.விமர்சனம் }}</p>
+				</div>
+				<div class="col-md-6">
+
+				</div>
+				<span class="clearfix borda"></span>
+			</article>
+			{% endfor %}
+		</section>
+			{% endif %}
+	</div>
